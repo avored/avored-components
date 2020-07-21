@@ -10,7 +10,7 @@ export default {
         Vue.component('avored-confirm', AvoRedConfirm)
 
         const confirm = params => {
-            EventBus.$emit('confirmOpen', params)
+            window.EventBus.$emit('confirmOpen', params)
         }
        
         Vue.prototype.$confirm = confirm

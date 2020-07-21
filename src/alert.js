@@ -10,7 +10,7 @@ export default {
         Vue.component('avored-alert', AvoRedAlert)
 
         const alert = params => {
-            EventBus.$emit('open', params)
+            window.EventBus.$emit('open', params)
         }
      
         Vue.prototype.$alert = alert

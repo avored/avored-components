@@ -49,7 +49,7 @@ export default {
   },
 
   mounted() {
-    EventBus.$on('open', this.open)
+    window.EventBus.$on('open', this.open)
     setTimeout(() => {
         this.isAlertVisible = false
     }, 5000)
