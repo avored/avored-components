@@ -1,6 +1,6 @@
 {
   "name": "avored-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -14,6 +14,7 @@
     "core-js": "^3.6.5",
     "lodash.includes": "^4.3.0",
     "lodash.remove": "^4.7.0",
+    "moment": "^2.27.0",
     "v-click-outside": "^3.0.1",
     "vue": "^2.6.11"
   },

@@ -21,7 +21,7 @@
               :disabled="isDisabled"
           />
         </div>
-        <div class="block w-full">
+        <div v-if="displayPreview" class="block w-full">
            <ul class="flex flex-row space-x-3 overflow-x-auto py-4 px-2 mt-2">
                  <li>
                     <div v-if="changeValue" class="relative">
@@ -37,13 +37,14 @@
 
         </div>
       </div>
-        <input type="hidden" :name="fieldName" v-model="changeValue" />
+      <input type="hidden" :name="fieldName" v-model="changeValue" />
       
       <p class="text-sm italic text-red-500" v-if="errorText">{{ errorText }}</p>
     </div>
   </div>
 </template>
 <script>
+import axios from 'axios'
 
 export default {
   name: "avored-upload",
@@ -57,6 +58,8 @@ export default {
     isDisabled: { type: [Boolean], default: false },
     uploadUrl: { type: [String], default: '' },
     multiple: { type: [Boolean], default: false },
+    displayPreview: { type: [Boolean], default: true },
+
   },
   data() {
     return {
@@ -85,6 +88,7 @@ export default {
               'Content-Type': 'multipart/form-data'
             }
         }).then(({data}) => {
+          this.$emit('uploadResponse', data)
           app.changeValue = data.path
         })
     }
