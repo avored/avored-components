@@ -63,7 +63,7 @@ export default {
       }
   },
   watch: { 
-      isVisible: function(newVal, oldVal) { // watch it
+      isVisible: function(newVal) {
           this.isModalVisible = newVal
       }
   },

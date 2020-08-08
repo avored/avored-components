@@ -8,6 +8,7 @@ import AvoRedTab from './components/AvoRedTab.vue'
 import AvoRedModal from './components/AvoRedModal.vue'
 import AvoRedAlert from './alert'
 import AvoRedConfirm from './confirm'
+import AvoRedDropdown from './components/AvoRedDropdown.vue'
 
 export {
     AvoRedInput,
@@ -19,5 +20,6 @@ export {
     AvoRedTab,
     AvoRedModal,
     AvoRedAlert,
-    AvoRedConfirm
+    AvoRedConfirm,
+    AvoRedDropdown
 }

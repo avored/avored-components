@@ -68,7 +68,6 @@
 import vClickOutside from "v-click-outside"
 import includes from 'lodash/includes'
 import findKey from 'lodash/findKey'
-import remove from 'lodash/remove'
 
 export default {
     name: "avored-select",
