@@ -22,7 +22,7 @@
         </div>
       
 				<div class="overflow-auto p-5 block max-h-screen w-full">
-					{{ confirmMessage }}
+          <slot />
 				</div>
 			</div>
 		</div>

@@ -80,7 +80,7 @@ export default {
     props: {
         labelClass: { type: [String], default: "" },
         labelText: { type: [String], default: "" },
-        initValue: { type: [String, Array], default: "" },
+        initValue: { type: [String, Array, Number], default: "" },
         options: {type: [Array, Object], default: () =>[]},
         errorText: { type: [String], default: ''},
         fieldName: { type: [String], default: ''},
