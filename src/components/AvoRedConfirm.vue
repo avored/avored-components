@@ -29,7 +29,6 @@
 <script>
 export default {
   name: "avored-confirm",
-
   props: {
     modalTitle: {
       type: [String],
@@ -47,33 +46,33 @@ export default {
       confirmBtnText: "Yes",
       cancelBtnText: "No",
       callback: null
-    };
+    }
   },
   methods: {
     close() {
-      this.isModalVisible = false;
-      this.$emit("close");
+      this.isModalVisible = false
+      this.$emit("close")
     },
     confirmBtnClick() {
-      this.isModalVisible = false;
-      if (typeof this.callBack == "function") {
-        this.callback(this);
+
+      this.isModalVisible = false
+      if (typeof this.callback == "function") {
+        this.callback(this)
       }
     },
     open(params) {
       this.isModalVisible = true;
-      console.log(params);
       if (typeof params === "object") {
         //@todo implement different types of confirm
-        this.confirmMessage = params.message;
-        this.callback = params.callback;
+        this.confirmMessage = params.message
+        this.callback = params.callback
       } else {
-        this.confirmMessage = params;
+        this.confirmMessage = params
       }
     }
   },
   mounted() {
-    window.EventBus.$on("confirmOpen", this.open);
+    window.EventBus.$on("confirmOpen", this.open)
   }
 };
 </script>
