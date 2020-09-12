@@ -35,7 +35,7 @@ export default {
         labelText: { type: [String], default: ''},
         labelClass: { type: [String], default: ''},
         inputClass: { type: [String], default: ''},
-        initValue: { type: [String], default: ''},
+        initValue: { type: [String, Boolean, Number], default: ''},
         errorText: { type: [String], default: ''},
         fieldName: { type: [String], default: ''},
         toggleOnValue: { type: [String, Number], default: 1},
