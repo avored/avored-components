@@ -3,8 +3,6 @@
         <slot>
              <div class="relative block w-full mb-6" 
                 v-click-outside="()=>{dropdownToggle=false}">
-                
-                
                 <label
                     v-if="labelText"
                     class="text-sm w-full text-gray-600"
@@ -95,23 +93,32 @@ export default {
         };
     },
     methods: {
+        isSelectedAlready(val) {
+            const findIndex = this.changeValue.findIndex((el) => {
+                return el == val
+            })
+
+            return findIndex >= 0
+        },
         selectedOption(event) {
             const val = event.target.getAttribute('value')
-            var findVal = false
-            if (this.multiple) {
-                if (!includes(this.changeValue, val)) {
+            if (!this.isSelectedAlready(val)) {
+                var findVal = false
+                if (this.multiple) {
+                    if (!includes(this.changeValue, val)) {
+                        findVal = true
+                        this.changeValue.push(val)
+                    }
+                } else {
                     findVal = true
+                    this.changeValue = []
+                    this.displayTexts = []
                     this.changeValue.push(val)
                 }
-            } else {
-                findVal = true
-                this.changeValue = []
-                this.displayTexts = []
-                this.changeValue.push(val)
-            }
 
-            if (findVal) {
-                this.displayTexts.push(this.options[val])
+                if (findVal) {
+                    this.displayTexts.push(this.options[val])
+                }
             }
             this.dropdownToggle = !this.dropdownToggle
         },
