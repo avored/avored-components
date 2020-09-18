@@ -25,7 +25,7 @@ More detail documantion is coming soon. If someone is willing to help with the d
     ></avored-input>
 
 | Prop Name   |  Is Required? | Prop Type  |
-|---|---|---|---|---|
+|---|---|---|
 |  Field Name | Yes | String |
 |  Label Text | No | String |
 |  Label Class | No |  String | 
