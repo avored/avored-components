@@ -89,7 +89,7 @@ export default {
             }
         }).then(({data}) => {
           this.$emit('uploadResponse', data)
-          app.changeValue = data.path
+          app.changeValue = data
         })
     }
   },

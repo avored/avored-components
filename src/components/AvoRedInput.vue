@@ -14,6 +14,7 @@
             :id="fieldName"
             :type="inputType"
             :name="fieldName"   
+            :step="isNumberType ? numberSteps : 1"
             class="px-3 flex-1 w-full py-2 outline-none shadow-sm focus:shadow focus:border rounded border block border-gray-400"
             :class="extraClass"
             :disabled="isDisabled"
@@ -39,11 +40,13 @@ export default {
     errorText: { type: [String], default: "" },
     fieldName: { type: [String], default: "" },
     isDisabled: { type: [Boolean], default: false },
+    numberSteps: { type: [Number, String], default: 1 },
   },
   data() {
     return {
       changeValue: this.initValue,
-      extraClass: ''
+      extraClass: '',
+      isNumberType: false,
     };
   },
   watch: {
@@ -54,6 +57,9 @@ export default {
   mounted() {
     if (this.errorText) {
       this.extraClass += " border-red-500";
+    }
+    if (this.inputType === 'number') {
+      this.isNumberType = true
     }
   }
 };

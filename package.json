@@ -1,6 +1,6 @@
 {
   "name": "avored-components",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,8 +9,8 @@
     "lint": "vue-cli-service lint"
   },
   "main": "dist/avored-components.common.js",
-  "publishConfig": { 
-      "registry": "https://npm.pkg.github.com/avored" 
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/avored"
   },
   "dependencies": {
     "axios": "^0.19.2",
