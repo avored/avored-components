@@ -14,7 +14,9 @@
             :id="fieldName"
             :type="inputType"
             :name="fieldName"   
+            :placeholder="placeholder"
             :step="isNumberType ? numberSteps : 1"
+            @change="fieldInputChange"
             class="px-3 flex-1 w-full py-2 outline-none shadow-sm focus:shadow focus:border rounded border block border-gray-400"
             :class="extraClass"
             :disabled="isDisabled"
@@ -41,6 +43,7 @@ export default {
     fieldName: { type: [String], default: "" },
     isDisabled: { type: [Boolean], default: false },
     numberSteps: { type: [Number, String], default: 1 },
+    placeholder: { type: [Number, String], default: '' },
   },
   data() {
     return {
@@ -52,6 +55,11 @@ export default {
   watch: {
     changeValue(newValue) {
       this.$emit("input", newValue);
+    }
+  },
+  methods: {
+    fieldInputChange(e) {
+      this.$emit("change", e)
     }
   },
   mounted() {
