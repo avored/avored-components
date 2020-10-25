@@ -42,7 +42,10 @@
                     </button>
                     <ul @click="selectedOption" v-if="dropdownToggle" 
                         class="dropdown-options w-full mt-1 z-10 bg-white border border-gray-500 absolute overflow-y-scroll rounded shadow text-gray-700">
-                        
+                         <li v-if="hasEmpty" value=""
+                                class="px-2 py-1 hover:bg-gray-300 cursor-pointer">
+                                {{ emptyLabel }}
+                            </li>
                         <template v-for="(optionLabel, optionValue) in options">
                             <li :key="optionValue" :value="optionValue"
                                 class="px-2 py-1 hover:bg-gray-300 cursor-pointer">
@@ -83,7 +86,9 @@ export default {
         errorText: { type: [String], default: ''},
         fieldName: { type: [String], default: ''},
         disabled: { type: [Boolean], default: false},
-        multiple: { type: [Boolean], default: false}
+        multiple: { type: [Boolean], default: false},
+        hasEmpty: { type: [Boolean], default: false},
+        emptyLabel: { type: [String], default: 'Please Select'},
     },
     data() {
         return {
@@ -142,6 +147,9 @@ export default {
         }
     },
     mounted() {
+        if (this.hasEmpty) {
+            this.options[''] = this.emptyLabel
+        }
         if (this.initValue.length > 0 && this.multiple) {
             this.initValue.forEach((ele) => {
                 this.displayTexts.push(this.options[ele])
