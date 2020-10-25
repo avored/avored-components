@@ -2,7 +2,7 @@
   <div>
       <div v-if="filerable" class="flex items-center">
           <div class="ml-auto">
-              <div class="my-2 relative flex sm:flex-row flex-col">
+              <div class="mb-2 relative flex sm:flex-row flex-col">
                     <div class="block relative">
                         <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
                             <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
@@ -12,7 +12,8 @@
                             </svg>
                         </span>
                         <input placeholder="Search"
-                            @change="filterTextChange"
+                            @change.prevent="filterTextChange"
+                            @keydown.enter.prevent='filterTextChange'
                             class="appearance-none rounded-l border-2 border-gray-400 block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
                     </div>
                     <div class="flex flex-row mb-1 sm:mb-0">
