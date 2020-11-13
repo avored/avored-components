@@ -150,11 +150,13 @@ export default {
         if (this.hasEmpty) {
             this.options[''] = this.emptyLabel
         }
-        if (this.initValue.length > 0 && this.multiple) {
-            this.initValue.forEach((ele) => {
-                this.displayTexts.push(this.options[ele])
-                this.changeValue.push(ele)
-            })
+        if (this.multiple) {
+            if (this.initValue.length > 0) {
+                this.initValue.forEach((ele) => {
+                    this.displayTexts.push(this.options[ele])
+                    this.changeValue.push(ele)
+                })
+            }
         } else {
             this.displayTexts.push(this.options[this.initValue])
             this.changeValue.push(this.initValue)
