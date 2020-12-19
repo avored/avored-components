@@ -89,7 +89,11 @@ export default {
             }
         }).then(({data}) => {
           this.$emit('uploadResponse', data)
-          app.changeValue = data
+          if (typeof data === 'object') {
+            app.changeValue = data.path
+          } else {
+            app.changeValue = data
+          }
         })
     }
   },
