@@ -10,7 +10,7 @@
   },
   "main": "dist/avored-components.common.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "lodash.includes": "^4.3.0",
     "lodash.remove": "^4.7.0",
