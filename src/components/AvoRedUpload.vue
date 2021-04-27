@@ -88,7 +88,8 @@ export default {
               'Content-Type': 'multipart/form-data'
             }
         }).then(({data}) => {
-          this.$emit('uploadResponse', data)
+          this.$emit('upload-response', data)
+          console.log('test')
           if (typeof data === 'object') {
             app.changeValue = data.path
           } else {

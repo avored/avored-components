@@ -10,8 +10,8 @@
   },
   "main": "dist/avored-components.common.js",
   "dependencies": {
-    "axios": "^0.19.2",
-    "core-js": "^3.6.5",
+    "axios": "^0.21.1",
+    "core-js": "^3.11.0",
     "lodash.includes": "^4.3.0",
     "lodash.remove": "^4.7.0",
     "moment": "^2.27.0",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
+    "@vue/cli-service": "^4.1.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
