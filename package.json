@@ -14,7 +14,7 @@
     "core-js": "^3.11.0",
     "lodash.includes": "^4.3.0",
     "lodash.remove": "^4.7.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "v-click-outside": "^3.0.1",
     "vue": "^2.6.11"
   },
